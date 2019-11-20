@@ -634,7 +634,7 @@ def sensor_data_pvoutput_status_generate( sensor ):
 			logger.debug('Temperature setting found '+ str(system_settings['system_settings_tmpr']))
 		tmpr = sensors[sensor]['tmpr'] if system_settings['system_settings_tmpr'] == 'c' else ((float(sensors[sensor]['tmpr'])-32)/9)*5
 
-	url = 'https://pvoutput.org/service/r2/addstatus.jsp?key='+sensor_settings[sensor]['pvoutput_api']+'&sid='+str(sensor_settings[sensor]['pvoutput_id'])+'&d='+sensors[sensor]['pvoutput_watt_sum']['day']+'&t='+sensors[sensor]['pvoutput_watt_sum']['time']+'&'+type+'='+str(sum)+'&v5='+str(tmpr);
+	url = 'https://pvoutput.org/service/r2/addstatus.jsp?key='+sensor_settings[sensor]['pvoutput_api']+'&sid='+str(sensor_settings[sensor]['pvoutput_id'])+'&d='+sensors[sensor]['pvoutput_watt_sum']['day']+'&t='+sensors[sensor]['pvoutput_watt_sum']['time']+'&'+type+'='+str(sum);
 
 	try:
 		r = urllib2.urlopen(url)
@@ -746,8 +746,8 @@ try:
 	ser = serial.Serial(port=usbport, baudrate=57600, bytesize=serial.EIGHTBITS, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE, timeout=3)
 	logger.info('Connected to the serial device '+usbport)
 except:
-	logger.error('Can not connect to /dev/ttyUSB0. I try now /dev/ttyUSB1')
-	usbport = '/dev/ttyUSB1'
+	logger.error('Can not connect to /dev/ttyAMA0. I try now /dev/ttyUSB0')
+	usbport = '/dev/ttyUSB0'
 	try:
 		ser = serial.Serial(port=usbport, baudrate=57600, bytesize=serial.EIGHTBITS, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE, timeout=3)
 		logger.info('Connected to the serial device '+usbport)
