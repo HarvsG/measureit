@@ -30,7 +30,7 @@ echo "ipv6" >> /etc/modules
 printf "\n >> done >>\n\n"
 
 printf "\n >> Set static ip adresses >>\n#########################\n"
-cat config-static-network >> /etc/network/interfaces
+#cat config-static-network >> /etc/network/interfaces
 systemctl daemon-reload
 systemctl restart networking
 printf "\n >> done >>\n\n"
@@ -93,13 +93,14 @@ printf "\n >> done >>\n\n"
 
 printf "\n >> configure and start the samba service  >>\n#########################\n"
 (echo raspberry; echo raspberry) | smbpasswd -a -s web
+cp /etc/samba/smb.conf /etc/samba/smb.conf.old
 cat config-samba >> /etc/samba/smb.conf
 printf "\n >> done >>\n\n"
 
 printf "\n >> start install measureit  >>\n#########################\n"
 printf "\n >> clone measureit from github  >>\n#########################\n"
 cd /web
-git clone git://github.com/lalelunet/measureit.git
+git clone git://github.com/HarvsG/measureit.git
 chown -R web:web /web
 printf "\n >> done >>\n\n"
 
