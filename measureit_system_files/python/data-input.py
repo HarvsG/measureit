@@ -28,7 +28,7 @@ annouying = False
 system = 'envi'
 logger = logging.getLogger('MeasureIt')
 
-usbport = '/dev/ttyUSB0'
+usbport = '/dev/ttyAMA0'
 config_file_name = "/web/measureit/measureit_system_files/measureit.cfg.php"
 hdlr = logging.FileHandler('/tmp/measureit.log')
 #clear logfile
@@ -639,6 +639,7 @@ def sensor_data_pvoutput_status_generate( sensor ):
 	try:
 		r = urllib2.urlopen(url)
 		logger.info('Try to update PVOutput from sensor : '+str(sensor)+' Output: '+str(r.read()))
+		logger.info(url)
 		r = re.search(r"(OK 200)", str(r.read()))
 		if r:
 			if r.group(1):
@@ -646,7 +647,6 @@ def sensor_data_pvoutput_status_generate( sensor ):
 
 	except:
 		logger.warning('Sensor '+str(sensor)+'sensor_data_pvoutput_status_generate. Error: '+traceback.format_exc())
-		logger.info(url)
 		logger.debug(traceback)
 
 	logger.debug(url)
@@ -779,7 +779,9 @@ try:
 			clamps = False
 
 			if info or debug:
-				print(line)
+				if line != '':
+					print(line)
+					logger.info(line)
 			# parsing from history_output
 			# data will not be used because of the data is buggy and not detailed enough :)
 			# but saving them is not an error. maybe we can use the data later
