@@ -18,7 +18,7 @@ apt-get -y upgrade
 printf "\n >> done >>\n\n"
 
 printf "\n>> install software >>\n######################\n"
-apt-get update && apt-get install -y vim daemontools-run php7.0-fpm php7.0-mysql nginx samba samba-common-bin python-mysqldb python-serial python-setuptools
+apt-get update && apt-get install -y vim daemontools-run php7.3-fpm php7.3-mysql nginx samba samba-common-bin python-mysqldb python-serial python-setuptools
 printf "\n >> done >>\n\n"
 
 printf "\n >> install python packages >>\n#########################\n"
