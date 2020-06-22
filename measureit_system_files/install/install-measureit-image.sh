@@ -44,13 +44,13 @@ printf "\n >> create directories for php change the default config and start php
 mkdir /web
 useradd -d /web -s /bin/bash web
 chown -R web:web /web
-sed -i -e 's/;daemonize = yes/daemonize = no/g' /etc/php/7.0/fpm/php-fpm.conf
-sed -i -e 's/www-data/web/g' /etc/php/7.0/fpm/pool.d/www.conf
+sed -i -e 's/;daemonize = yes/daemonize = no/g' /etc/php/7.3/fpm/php-fpm.conf
+sed -i -e 's/www-data/web/g' /etc/php/7.3/fpm/pool.d/www.conf
 printf "\n >> done >>\n\n"
 
 # dear systemd. these services are controlled by supervise
 printf "\n >> remove php control from systemd and start php server with supervise >>\n#########################\n"
-systemctl stop php7.0-fpm && systemctl mask php7.0-fpm && systemctl daemon-reload && rm /etc/init.d/php7.0-fpm
+systemctl stop php7.3-fpm && systemctl mask php7.3-fpm && systemctl daemon-reload && rm /etc/init.d/php7.3-fpm
 mkdir /etc/servers/php7-fpm
 cat svc-run-php > /etc/servers/php7-fpm/run
 chmod +x /etc/servers/php7-fpm/run
