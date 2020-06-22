@@ -31,8 +31,8 @@ printf "\n >> done >>\n\n"
 
 printf "\n >> Not setting static ip adresses >>\n#########################\n"
 #cat config-static-network >> /etc/network/interfaces
-systemctl daemon-reload
-systemctl restart networking
+#systemctl daemon-reload
+#systemctl restart networking
 printf "\n >> done >>\n\n"
 
 printf "\n >> create supervise directories >>\n#########################\n"
