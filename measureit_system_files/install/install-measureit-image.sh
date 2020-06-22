@@ -117,10 +117,10 @@ chmod +x /etc/servers/measureit/run
 ln -s /etc/servers/measureit /etc/service/measureit
 printf "\n >> done >>\n\n"
 
-printf "\n >> clean up the system and shutdown  >>\n#########################\n"
+printf "\n >> clean up the system and restart >>\n#########################\n"
 apt-get clean
 rm -r /home/pi/measureit/
 rm -r /web/measureit/measureit_system_files/install/
 echo '' > /home/pi/.bash_history
 echo '' > /root/.bash_history
-shutdown -h now
+shutdown -r now
