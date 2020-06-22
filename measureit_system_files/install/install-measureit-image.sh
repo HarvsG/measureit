@@ -29,7 +29,7 @@ printf "\n >> enable ipv6 >>\n#########################\n"
 echo "ipv6" >> /etc/modules
 printf "\n >> done >>\n\n"
 
-printf "\n >> Set static ip adresses >>\n#########################\n"
+printf "\n >> Not setting static ip adresses >>\n#########################\n"
 #cat config-static-network >> /etc/network/interfaces
 systemctl daemon-reload
 systemctl restart networking
