@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `measure_settings` (
   `measure_currency` varchar(5) NOT NULL DEFAULT 'Pound',
   `measure_sensor` tinyint(5) NOT NULL,
   `measure_range` varchar(5) NOT NULL DEFAULT '0',
-  `measure_timeframe` smallint(4) NOT NULL,
+  `measure_timeframe` smallint(4) NOT NULL DEFAULT '0',
   `measure_timezone` varchar(128) NOT NULL DEFAULT 'GMT0',
   `measure_timezone_diff` float(4) NOT NULL DEFAULT '0',
   `measure_type` tinyint(1) NOT NULL DEFAULT '0',
