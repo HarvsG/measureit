@@ -13,6 +13,10 @@
 # cd measureit/measureit_system_files/install
 # run this script './install-measureit-image.sh'
 
+printf "\n >>cd into /home/pi/measureit/measureit_system_files/install >>\n#########################\n"
+cd /home/pi/measureit/measureit_system_files/install
+printf "\n >> done >>\n\n"
+
 printf "\n >> update system >>\n#########################\n"
 apt-get -y upgrade
 printf "\n >> done >>\n\n"
