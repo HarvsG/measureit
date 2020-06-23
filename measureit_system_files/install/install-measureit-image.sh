@@ -26,7 +26,7 @@ apt-get update && apt-get install -y vim daemontools-run php7.3-fpm php7.3-mysql
 printf "\n >> done >>\n\n"
 
 printf "\n >> install python packages >>\n#########################\n"
-easy_install twython requests requests_oauthlib
+python /usr/lib/python2.7/dist-packages/easy_install.py twython==2.7.0 requests requests_oauthlib
 printf "\n >> done >>\n\n"
 
 printf "\n >> enable ipv6 >>\n#########################\n"
