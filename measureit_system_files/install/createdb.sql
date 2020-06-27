@@ -48,9 +48,9 @@ CREATE TABLE IF NOT EXISTS `measure_settings` (
   `measure_timezone_diff` float(4) NOT NULL DEFAULT '0',
   `measure_type` tinyint(1) NOT NULL DEFAULT '0',
   `measure_pvoutput_id` int(12) NOT NULL DEFAULT '0',
-  `measure_pvoutput_api` varchar(256) NOT NULL,
+  `measure_pvoutput_api` varchar(256) NOT NULL DEFAULT '',
   `measure_scale_factor` decimal(10,2) NOT NULL DEFAULT '1.00',
-  `measure_lower_limit` smallint(5) NOT NULL
+  `measure_lower_limit` smallint(5) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `measure_system` (
@@ -172,4 +172,4 @@ CREATE TABLE IF NOT EXISTS measure_notifications (
 
 INSERT INTO measure_it.measure_positions (position_time, position_description, position_sensor) VALUES (now(), 'start position', '0');
 INSERT INTO measure_it.measure_sensors (sensor_id, sensor_title) VALUES ('0', 'Sensor 0');
-INSERT INTO measure_it.measure_settings (measure_history, measure_currency, measure_sensor) VALUES ('365', 'Euro', '0');
+INSERT INTO measure_it.measure_settings (measure_history, measure_currency, measure_sensor) VALUES ('365', 'Pound', '0');
