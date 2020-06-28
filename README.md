@@ -1,7 +1,7 @@
-# measureit is moved to gitlab #
+# measureit is deprecated#
+This is my fork, which I update ocassionally, but do not support.
 
-Please go to: https://gitlab.com/lalelunet/measureit/
-
+Install instructions [here](https://gist.github.com/HarvsG/5c25edac569b0fa7d7674a5e4c144a9e)
 
 ### [The end of the measureit project ?!](https://github.com/lalelunet/measureit/wiki/The-end-of-the-measureit-project-%3F!) ###
 
